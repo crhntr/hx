@@ -33,7 +33,7 @@ func SetPushURL(res http.ResponseWriter, url string) {
 	res.Header().Set(responseHeaderPushURL, url)
 }
 
-func PreventHistoryUpdate(res http.ResponseWriter) {
+func SetPreventHistoryUpdate(res http.ResponseWriter) {
 	res.Header().Set(responseHeaderPushURL, "false")
 }
 
@@ -49,9 +49,9 @@ func SetRefresh(res http.ResponseWriter) {
 	res.Header().Set(responseHeaderRefresh, "true")
 }
 
-// ReplaceURL sets the HX-Replace header to the given URL.
+// SetReplaceURL sets the HX-Replace header to the given URL.
 // See https://htmx.org/headers/hx-replace/
-func ReplaceURL(res http.ResponseWriter, url string) {
+func SetReplaceURL(res http.ResponseWriter, url string) {
 	res.Header().Set(responseHeaderReplace, url)
 }
 
