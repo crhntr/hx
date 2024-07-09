@@ -9,14 +9,14 @@ import (
 )
 
 var (
-	requestHeaderHXBooted              = textproto.CanonicalMIMEHeaderKey("HX-Boosted")
-	requestHeaderHXCurrentURL          = textproto.CanonicalMIMEHeaderKey("HX-Current-URL")
-	requestHeaderHistoryRestoreRequest = textproto.CanonicalMIMEHeaderKey("HX-History-Restore-Request")
-	requestHeaderHXPrompt              = textproto.CanonicalMIMEHeaderKey("HX-Prompt")
-	requestHeaderHXRequest             = textproto.CanonicalMIMEHeaderKey("HX-Request")
-	requestHeaderHXTarget              = textproto.CanonicalMIMEHeaderKey("HX-Target")
-	requestHeaderHXTriggerName         = textproto.CanonicalMIMEHeaderKey("HX-Trigger-Name")
-	requestHeaderHXTriggerID           = textproto.CanonicalMIMEHeaderKey("HX-Trigger")
+	requestHeaderHXBooted                = textproto.CanonicalMIMEHeaderKey("HX-Boosted")
+	requestHeaderHXCurrentURL            = textproto.CanonicalMIMEHeaderKey("HX-Current-URL")
+	requestHeaderHXHistoryRestoreRequest = textproto.CanonicalMIMEHeaderKey("HX-History-Restore-Request")
+	requestHeaderHXPrompt                = textproto.CanonicalMIMEHeaderKey("HX-Prompt")
+	requestHeaderHXRequest               = textproto.CanonicalMIMEHeaderKey("HX-Request")
+	requestHeaderHXTarget                = textproto.CanonicalMIMEHeaderKey("HX-Target")
+	requestHeaderHXTriggerName           = textproto.CanonicalMIMEHeaderKey("HX-Trigger-Name")
+	requestHeaderHXTriggerID             = textproto.CanonicalMIMEHeaderKey("HX-Trigger")
 )
 
 func booleanHeaderIsTrue(h http.Header, canonicalName string) bool {
@@ -47,7 +47,7 @@ func CurrentURL(req *http.Request) (*url.URL, error) {
 
 // IsHistoryRestoreRequest reports whether the HX-History-Restore-Request request header set to "true".
 func IsHistoryRestoreRequest(req *http.Request) bool {
-	return booleanHeaderIsTrue(req.Header, requestHeaderHistoryRestoreRequest)
+	return booleanHeaderIsTrue(req.Header, requestHeaderHXHistoryRestoreRequest)
 }
 
 // IsRequest reports whether the HX-Request request header set to "true".
